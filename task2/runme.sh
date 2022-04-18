@@ -34,7 +34,7 @@ echo "По факту:" $completedTasks >>"$resultFileName"
 
 echo "Проверяем, что в файле статистики находится ожидаемое количество строчек" >>"$resultFileName"
 echo "Ожидалось:" $count >>"$resultFileName"
-echo "По факту:" $(wc -l stats | awk '{ print $1 }') >>"$resultFileName"
+echo "По факту:" $(cat stats | wc -l) >>"$resultFileName"
 
 echo "Проверяем, что каждая задача захватила блокировку хотя бы раз" >>"$resultFileName"
 echo "Ожидалось: все числа > 0" >>"$resultFileName"
