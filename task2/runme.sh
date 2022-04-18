@@ -1,13 +1,13 @@
 #!/bin/bash
 rm -f somefile.lck stats
 make -s task
-if [[ $1 -eq "-b" ]]
-	then
-		./task &
-		rm -f somefile.lck
-		wait
-		exit
-	fi
+if [[ $1 == "-b" ]]
+then
+	./task &
+	rm -f somefile.lck
+	wait
+	exit
+fi
 
 count=10
 pids=()
